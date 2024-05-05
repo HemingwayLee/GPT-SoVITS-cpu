@@ -16,6 +16,7 @@ docker-compose up
 * Step 1: audio slice
 * Step 2: audio clean up
 * Step 3: labeling
+  * We can use `Automatic speech recognition` (ASR) to do it
 * Step 4: training
 * Step 5: inference
 
