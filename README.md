@@ -12,6 +12,13 @@
 docker-compose up
 ```
 
+# How to train
+* Step 1: audio slice
+* Step 2: audio clean up
+* Step 3: labeling
+* Step 4: training
+* Step 5: inference
+
 <div align="center">
 
 <h1>GPT-SoVITS-WebUI</h1>
