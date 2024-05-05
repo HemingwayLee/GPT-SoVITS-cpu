@@ -51,9 +51,6 @@ https://github.com/RVC-Boss/GPT-SoVITS/assets/129054828/05bee1fa-bdd8-4d85-9350-
 
 **User guide: [简体中文](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e) | [English](https://rentry.co/GPT-SoVITS-guide#/)**
 
-## Installation
-
-For users in China region, you can [click here](https://www.codewithgpu.com/i/RVC-Boss/GPT-SoVITS/GPT-SoVITS-Official) to use AutoDL Cloud Docker to experience the full functionality online.
 
 ### Tested Environments
 
@@ -63,14 +60,6 @@ For users in China region, you can [click here](https://www.codewithgpu.com/i/RV
 - Python 3.9, PyTorch 2.2.2, CPU devices
 
 _Note: numba==0.56.4 requires py<3.11_
-
-### Windows
-
-If you are a Windows user (tested with win>=10), you can directly download the [pre-packaged distribution](https://huggingface.co/lj1995/GPT-SoVITS-windows-package/resolve/main/GPT-SoVITS-beta.7z?download=true) and double-click on _go-webui.bat_ to start GPT-SoVITS-WebUI.
-
-Users in China region can download [the 0217 package](https://www.icloud.com.cn/iclouddrive/061bfkcVJcBfsMfLF5R2XKdTQ#GPT-SoVITS-beta0217) or [the 0306fix2 package](https://www.icloud.com.cn/iclouddrive/09aaTLf96aa92dbLe0fPNM5CQ#GPT-SoVITS-beta0306fix2) by clicking the links and then selecting "Download a copy."
-
-_Note: The 0306fix2 version doubles the inference speed and fixes all issues with the no reference text mode._
 
 ### Linux
 
