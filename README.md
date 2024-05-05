@@ -1,3 +1,12 @@
+# What
+* This project is cloned from [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS), and modified for Macbook with cpu
+
+# Modification
+* Remove `deploy` part from docker-compose file
+* Remove `os.environ["CUDA_VISIBLE_DEVICES"] = os.environ.get("_CUDA_VISIBLE_DEVICES")` from py files
+* Set `n_gpus = 1` in `def main()` function
+* Set `torch.set_float32_matmul_precision("highest")` with `highest`
+
 <div align="center">
 
 <h1>GPT-SoVITS-WebUI</h1>
