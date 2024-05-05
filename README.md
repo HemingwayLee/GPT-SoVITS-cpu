@@ -7,6 +7,11 @@
 * Set `n_gpus = 1` in `def main()` function
 * Set `torch.set_float32_matmul_precision("highest")` with `highest`
 
+# How to run with docker compose
+```
+docker-compose up
+```
+
 <div align="center">
 
 <h1>GPT-SoVITS-WebUI</h1>
@@ -135,14 +140,6 @@ Download and place [ffmpeg.exe](https://huggingface.co/lj1995/VoiceConversionWeb
 
 ```
 docker compose -f "docker-compose.yaml" up -d
-```
-
-#### Running with docker command
-
-As above, modify the corresponding parameters based on your actual situation, then run the following command:
-
-```
-docker run --rm -it --gpus=all --env=is_half=False --volume=G:\GPT-SoVITS-DockerTest\output:/workspace/output --volume=G:\GPT-SoVITS-DockerTest\logs:/workspace/logs --volume=G:\GPT-SoVITS-DockerTest\SoVITS_weights:/workspace/SoVITS_weights --workdir=/workspace -p 9880:9880 -p 9871:9871 -p 9872:9872 -p 9873:9873 -p 9874:9874 --shm-size="16G" -d breakstring/gpt-sovits:xxxxx
 ```
 
 ## Pretrained Models
