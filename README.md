@@ -20,6 +20,17 @@ docker-compose up
 * Step 4: training
 * Step 5: inference
 
+# To run mandarin ASR locally
+* We need 3 models of `達摩`
+
+```
+path_asr  = path_asr  if os.path.exists(path_asr)  else "iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch"
+path_vad  = path_vad  if os.path.exists(path_vad)  else "iic/speech_fsmn_vad_zh-cn-16k-common-pytorch"
+path_punc = path_punc if os.path.exists(path_punc) else "iic/punc_ct-transformer_zh-cn-common-vocab272727-pytorch"
+```
+
+* There will be downloaded automatically into `~/.cache/modelscope/hub/iic/`
+
 <div align="center">
 
 <h1>GPT-SoVITS-WebUI</h1>
