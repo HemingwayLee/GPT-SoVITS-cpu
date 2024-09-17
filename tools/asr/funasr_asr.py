@@ -14,6 +14,8 @@ path_asr  = path_asr  if os.path.exists(path_asr)  else "iic/speech_paraformer-l
 path_vad  = path_vad  if os.path.exists(path_vad)  else "iic/speech_fsmn_vad_zh-cn-16k-common-pytorch"
 path_punc = path_punc if os.path.exists(path_punc) else "iic/punc_ct-transformer_zh-cn-common-vocab272727-pytorch"
 
+print(path_asr)
+
 model = AutoModel(
     model               = path_asr,
     model_revision      = "v2.0.4",

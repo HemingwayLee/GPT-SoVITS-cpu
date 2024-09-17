@@ -9,9 +9,12 @@ services:
       - is_share=False
     volumes:
       - ./output:/workspace/output
+      - ./input:/workspace/input
       - ./logs:/workspace/logs
       - ./SoVITS_weights:/workspace/SoVITS_weights
       - ./reference:/workspace/reference
+      - ./webui.py:/workspace/webui.py
+      # - ./GPT_SoVITS:/workspace/GPT_SoVITS
     working_dir: /workspace
     ports:
       - "9880:9880"
