@@ -1,3 +1,36 @@
+# What
+* This project is cloned from [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS), and modified for Macbook with cpu
+
+# Modification
+* Remove `deploy` part from docker-compose file
+* Remove `os.environ["CUDA_VISIBLE_DEVICES"] = os.environ.get("_CUDA_VISIBLE_DEVICES")` from py files
+* Set `n_gpus = 1` in `def main()` function
+* Set `torch.set_float32_matmul_precision("highest")` with `highest`
+
+# How to run with docker compose
+```
+docker-compose up
+```
+
+# How to train
+* Step 1: audio slice
+* Step 2: audio clean up
+* Step 3: labeling
+  * We can use `Automatic speech recognition` (ASR) to do it
+* Step 4: training
+* Step 5: inference
+
+# To run mandarin ASR locally
+* We need 3 models of `達摩`
+
+```
+path_asr  = path_asr  if os.path.exists(path_asr)  else "iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch"
+path_vad  = path_vad  if os.path.exists(path_vad)  else "iic/speech_fsmn_vad_zh-cn-16k-common-pytorch"
+path_punc = path_punc if os.path.exists(path_punc) else "iic/punc_ct-transformer_zh-cn-common-vocab272727-pytorch"
+```
+
+* There will be downloaded automatically into `~/.cache/modelscope/hub/iic/`
+
 <div align="center">
 
 <h1>GPT-SoVITS-WebUI</h1>
@@ -37,9 +70,6 @@ https://github.com/RVC-Boss/GPT-SoVITS/assets/129054828/05bee1fa-bdd8-4d85-9350-
 
 **User guide: [简体中文](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e) | [English](https://rentry.co/GPT-SoVITS-guide#/)**
 
-## Installation
-
-For users in China region, you can [click here](https://www.codewithgpu.com/i/RVC-Boss/GPT-SoVITS/GPT-SoVITS-Official) to use AutoDL Cloud Docker to experience the full functionality online.
 
 ### Tested Environments
 
@@ -49,14 +79,6 @@ For users in China region, you can [click here](https://www.codewithgpu.com/i/RV
 - Python 3.9, PyTorch 2.2.2, CPU devices
 
 _Note: numba==0.56.4 requires py<3.11_
-
-### Windows
-
-If you are a Windows user (tested with win>=10), you can directly download the [pre-packaged distribution](https://huggingface.co/lj1995/GPT-SoVITS-windows-package/resolve/main/GPT-SoVITS-beta.7z?download=true) and double-click on _go-webui.bat_ to start GPT-SoVITS-WebUI.
-
-Users in China region can download [the 0217 package](https://www.icloud.com.cn/iclouddrive/061bfkcVJcBfsMfLF5R2XKdTQ#GPT-SoVITS-beta0217) or [the 0306fix2 package](https://www.icloud.com.cn/iclouddrive/09aaTLf96aa92dbLe0fPNM5CQ#GPT-SoVITS-beta0306fix2) by clicking the links and then selecting "Download a copy."
-
-_Note: The 0306fix2 version doubles the inference speed and fixes all issues with the no reference text mode._
 
 ### Linux
 
@@ -126,14 +148,6 @@ Download and place [ffmpeg.exe](https://huggingface.co/lj1995/VoiceConversionWeb
 
 ```
 docker compose -f "docker-compose.yaml" up -d
-```
-
-#### Running with docker command
-
-As above, modify the corresponding parameters based on your actual situation, then run the following command:
-
-```
-docker run --rm -it --gpus=all --env=is_half=False --volume=G:\GPT-SoVITS-DockerTest\output:/workspace/output --volume=G:\GPT-SoVITS-DockerTest\logs:/workspace/logs --volume=G:\GPT-SoVITS-DockerTest\SoVITS_weights:/workspace/SoVITS_weights --workdir=/workspace -p 9880:9880 -p 9871:9871 -p 9872:9872 -p 9873:9873 -p 9874:9874 --shm-size="16G" -d breakstring/gpt-sovits:xxxxx
 ```
 
 ## Pretrained Models
