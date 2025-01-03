@@ -312,6 +312,17 @@ def merge_short_text_in_array(texts, threshold):
     return result
 
 def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language, how_to_cut=i18n("不切"), top_k=20, top_p=0.6, temperature=0.6, ref_free = False):
+    print(ref_wav_path)
+    print(prompt_text)
+    print(prompt_language)
+    print(text)
+    print(text_language)
+    print(how_to_cut)
+    print(top_k)
+    print(top_p)
+    print(temperature)
+    print(ref_free)
+    
     if prompt_text is None or len(prompt_text) == 0:
         ref_free = True
     t0 = ttime()
