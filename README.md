@@ -15,9 +15,12 @@ docker-compose up
 # How to train
 * Step 1: audio slice
 * Step 2: audio clean up
+  * We can use UVR5 to do the cleaning
 * Step 3: labeling
   * We can use `Automatic speech recognition` (ASR) to do it
 * Step 4: training
+  * GPT model: to understand the text context
+  * SoVits model: to understand the voice style
 * Step 5: inference
 
 # To run mandarin ASR locally
