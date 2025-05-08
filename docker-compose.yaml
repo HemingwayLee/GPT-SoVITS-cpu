@@ -17,6 +17,7 @@ services:
       - ./webui.py:/workspace/webui.py
       - ./GPT_weights:/workspace/GPT_weights
       - ./GPT_SoVITS/inference_webui.py:/workspace/GPT_SoVITS/inference_webui.py
+      - ./GPT_SoVITS/inference_cmd.py:/workspace/GPT_SoVITS/inference_cmd.py
     working_dir: /workspace
     ports:
       - "9880:9880"
